@@ -116,7 +116,7 @@ jobs:
         echo "TAG=${GITHUB_SHA::7}" | tee -a $GITHUB_ENV
 
     - name: Login to DockerHub Registry to increase pull quota
-      run:  docker login -u ${{ env.REGISTRY_USER }} -p ${{ env.REGISTRY_PASSWORD }}    
+      run:  docker login quay.io -u ${{ env.REGISTRY_USER }} -p ${{ env.REGISTRY_PASSWORD }}    
 
     # https://github.com/redhat-actions/buildah-build#readme
     - name: Build from Dockerfile
