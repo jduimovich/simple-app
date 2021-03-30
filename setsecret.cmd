@@ -15,8 +15,8 @@ rem echo  The token is  /%LOGIN%/
 gh secret set OPENSHIFT_SERVER -b %SERVER%
 gh secret set OPENSHIFT_TOKEN -b %LOGIN%
  
-IF "%MY_DOCKER_PW%"=="" (GOTO :missing_reg_token) 
-gh secret set REGISTRY_PASSWORD -b %MY_DOCKER_PW%
+IF "%MY_QUAY_PW%"=="" (GOTO :missing_reg_token) 
+gh secret set REGISTRY_PASSWORD -b %MY_QUAY_PW%
 goto :end
 
 :missing_reg_token
