@@ -15,6 +15,6 @@ Try it out by forking this demo or use your own container based application.
 | 3. Fill in the details for each of the necessary components. Each edit location is marked with  a  ⬇️ so you can easily find and configure the workflow.       | ![destination](editconfig.png).    |
 
 | 4. Push your changes and watch it build and deploy to your cluster.  You can find the destination app in the build log or in the destination cluster. 
-  |          |
+  |    ![running](running.png).        |
  
 
