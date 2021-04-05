@@ -9,8 +9,7 @@ This application runs a simple node.js server and serves up HTML pages.
 
 Try it out by forking this demo or use your own container based application.
  
- 
-| ----------- | ----------- |
+  
 | 1. Get a sandbox account at https://developers.redhat.com/developer-sandbox      | ![OpenShift Sandbox Account](sandbox.png)       |
 | 2. Add the OpenShift Workflow in the Actions tab of in your GitHub repository.   | ![OpenShift Workflow](workflow.png)         |
 | 3. Fill in the details for each of the necessary components. Each edit location is marked with  a  ⬇️ so you can easily find and configure the workflow.       | ![destination](editconfig.png).    |
