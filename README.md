@@ -11,9 +11,9 @@ Try it out by forking this demo or use your own container based application.
  
 | Step    |    |
 | ----------- | ----------- |
-| 1. Get a sandbox account at https://developers.redhat.com/developer-sandbox      | ![OpenShift Sandbox Account](sandbox.png)       |
-| 2. Add the OpenShift Workflow in the Actions tab of in your GitHub repository.   | ![OpenShift Workflow](workflow.png)         |
-| 3. Fill in the details for each of the necessary components. Each edit location is marked with  a  ⬇️ so you can easily find and configure the workflow.       | ![destination](editconfig.png).    | 
-| 4. Push your changes and watch it build and deploy to your cluster.     |    ![running](running.png).        |
+| 1. Get a sandbox account at https://developers.redhat.com/developer-sandbox      | ![OpenShift Sandbox Account](images/sandbox.png)       |
+| 2. Add the OpenShift Workflow in the Actions tab of in your GitHub repository.   | ![OpenShift Workflow](images/workflow.png)         |
+| 3. Fill in the details for each of the necessary components. Each edit location is marked with  a  ⬇️ so you can easily find and configure the workflow.       | ![destination](images/editconfig.png).    | 
+| 4. Push your changes and watch it build and deploy to your cluster.     |    ![running](images/running.png).        |
  
 
