@@ -35,11 +35,11 @@ name: OpenShift
 # https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets
 env:
   # ⬇️ EDIT with your registry and registry path.
-  REGISTRY: quay.io/jduimovich0
+  REGISTRY: ghcr.io/${{ github.actor }}’
   # ⬇️ EDIT with your registry username.
-  REGISTRY_USER: jduimovich0
-  REGISTRY_PASSWORD: ${{ secrets.REGISTRY_PASSWORD }}
-
+  REGISTRY_USER: ${{ github.actor }}’
+  REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+  
   # ⬇️ EDIT to log into your OpenShift cluster and set up the context.
   # See https://github.com/redhat-actions/oc-login#readme for how to retrieve these values.
   OPENSHIFT_SERVER: ${{ secrets.OPENSHIFT_SERVER }}
