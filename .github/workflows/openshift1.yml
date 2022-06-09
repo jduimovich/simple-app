@@ -80,9 +80,9 @@ jobs:
             REGISTRY_PASSWORD: `${{ secrets.REGISTRY_PASSWORD }}`,
           };
 
-          const GHCR = "ghcr.io";
-          if (`${{ env.IMAGE_REGISTRY }}`.startsWith(GHCR)) {
-            core.info(`Image registry is ${GHCR} - no registry password required`);
+          const QUAY = "quay.io";
+          if (`${{ env.IMAGE_REGISTRY }}`.startsWith(QUAY)) {
+            core.info(`Image registry is ${QUAY} - no registry password required`);
           }
           else {
             core.info("A registry password is required");
