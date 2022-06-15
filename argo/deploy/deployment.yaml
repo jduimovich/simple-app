@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: simple-app 
+    app.kubernetes.io/name: simple-app
+    app.kubernetes.io/part-of: simple-app
+  name: simple-app
+  namespace: simple-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: simple-app
+  strategy: {}
+  template:
+    metadata: 
+      labels:
+        app.kubernetes.io/instance: simple-app
+    spec:
+      containers:
+      - image: quay.io/abate/simple-app
+        imagePullPolicy: Always
+        name: container-image
+        resources: {} 
