@@ -9,7 +9,7 @@ spec:
     namespace: simple-app
     server: 'https://kubernetes.default.svc'
   source:
-    path: simple-app-gitops/deploy
+    path: deploy
     repoURL:  https://github.com/charles-bate/simple-app.git
     targetRevision: HEAD
     directory:
