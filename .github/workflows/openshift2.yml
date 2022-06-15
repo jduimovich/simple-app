@@ -158,7 +158,7 @@ jobs:
         chmod +x ./yq
     - name: Patch Deployment YAML with new image references
       run: | 
-        ./yq  e '.spec.template.spec.containers[0].image = "${{ env.REGISTRY }}/simple-app:${{ env.TAG }}"' deploy/deployment.yaml -i
+        ./yq  e '.spec.template.spec.containers[0].image = "${{ steps.push-image.outputs.registry-path }}"' deploy/deployment.yaml -i
     - name: Show list of current images
       run: |
         ./yq  e '.spec.template.spec.containers[0].image' deploy/deployment.yaml
@@ -171,5 +171,5 @@ jobs:
     - name: Create Pull Request to update changes in repo
       uses: peter-evans/create-pull-request@v3
       with:
-        title: 'Deploy with tag ${{ env.TAG }} for commit ${{ github.event.head_commit.message }}'
-        commit-message: 'New deployment images with tag ${{ env.TAG }}'
+        title: 'Deploy with tag ${{ env.IMAGE_TAG }} for commit ${{ github.event.head_commit.message }}'
+        commit-message: 'New deployment images with tag ${{ env.IMAGE_TAG }}'
