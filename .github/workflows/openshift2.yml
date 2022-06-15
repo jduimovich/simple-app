@@ -150,26 +150,26 @@ jobs:
     # The path the image was pushed to is now stored in ${{ steps.push-image.outputs.registry-path }}
 
     - name: Install  yq
-        run: |
-          ls -al 
-          export VERSION=v4.2.0  
-          export BINARY=yq_linux_amd64
-          wget -q https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY} -O ./yq
-          chmod +x ./yq
-      - name: Patch Deployment YAML with new image references
-        run: | 
-            ./yq  e '.spec.template.spec.containers[0].image = "${{ env.REGISTRY }}/simple-app:${{ env.TAG }}"' deploy/deployment.yaml -i
-      - name: Show list of current images
-        run: |
-          ./yq  e '.spec.template.spec.containers[0].image' deploy/deployment.yaml
-      - name: Cleanup
-        run: |
-          rm -rf ./yq
-          rm -rf  kubeconfig.yaml
-          rm -rf  *digest.txt
-          rm -rf  tmp_*
-      - name: Create Pull Request to update changes in repo
-        uses: peter-evans/create-pull-request@v3
-        with:
-          title: 'Deploy with tag ${{ env.TAG }} for commit ${{ github.event.head_commit.message }}'
-          commit-message: 'New deployment images with tag ${{ env.TAG }}'
+      run: |
+        ls -al 
+        export VERSION=v4.2.0  
+        export BINARY=yq_linux_amd64
+        wget -q https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY} -O ./yq
+        chmod +x ./yq
+    - name: Patch Deployment YAML with new image references
+      run: | 
+        ./yq  e '.spec.template.spec.containers[0].image = "${{ env.REGISTRY }}/simple-app:${{ env.TAG }}"' deploy/deployment.yaml -i
+    - name: Show list of current images
+      run: |
+        ./yq  e '.spec.template.spec.containers[0].image' deploy/deployment.yaml
+    - name: Cleanup
+      run: |
+        rm -rf ./yq
+        rm -rf  kubeconfig.yaml
+        rm -rf  *digest.txt
+        rm -rf  tmp_*
+    - name: Create Pull Request to update changes in repo
+      uses: peter-evans/create-pull-request@v3
+      with:
+        title: 'Deploy with tag ${{ env.TAG }} for commit ${{ github.event.head_commit.message }}'
+        commit-message: 'New deployment images with tag ${{ env.TAG }}'
